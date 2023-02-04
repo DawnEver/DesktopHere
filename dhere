@@ -50,9 +50,10 @@ then
     done
     desktopHere $destpath
 
-if [[ $param == --drop ]]||[[ $param == -d ]];
+elif [[ $param == --drop ]]||[[ $param == -d ]];
 then
     rm -r ~/Desktop
+    mkdir ~/Desktop
 
 elif [[ $param == --list ]]||[[ $param == -l ]];
 then
@@ -79,4 +80,3 @@ else
         echo "please check your directory"
     fi
 fi
-
