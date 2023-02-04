@@ -1,2 +1,3 @@
 #!/bin/bash
-ln -s ./dhere /usr/local/bin/dhere
+dir=`dirname $0`
+ln -s $dir/dhere /usr/local/bin/dhere

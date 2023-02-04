@@ -6,6 +6,7 @@
 - `dhere --reset`or`dhere -r`reset desktop to a backup version
 - `dhere --drop`or`dhere -d`drop current desktop
 - `dhere --list`or`dhere -l`list your backups
+- `dhere --show`or`dhere -s`show current desktop folder
 ## Attention
 - Password is needed for your first usage.
 - Machine will clear and create a new desktop after restart,so save your work in time.
@@ -19,3 +20,6 @@ Just like you,I beggan to miss the old days files  on the Desktop and wuthin a c
 Okay,I just hide the files instaed of sort them.
 But sorting files is time-consuming and needed frequently(to me at least once a month).
 For deep hate for seaching for workspace folder in finder,I developed **Desktop Here**.Any folder in you machine can be your desktop. 
+
+## Todos
+- gui

@@ -1,6 +1,12 @@
 #!/bin/bash
 param=$1
-config=`readlink /usr/local/bin/dhere`/.dhere
+originlink=`readlink /usr/local/bin/dhere`
+workspace=${originlink%%/dhere*}
+if [[ workspace == '' ]];
+then
+    workspace=.
+fi
+config=$workspace/.dhere
 if [ ! -d $config ];
 then
     mkdir $config
@@ -34,19 +40,19 @@ authenticate(){
 
 authenticate
 
-
 if [[ $param == --reset ]]||[[ $param == -r ]];
 then
     echo ==================================
-    ls -a .dhere | grep '_Desktop_.'|sort
+    ls -a $workspace/.dhere | grep '_Desktop_.'|sort
     echo ==================================
     read -p 'please enter your desktop version:' Desktopbackup
     
     while [ ! -d $destpath];
     do
-        read -p 'please try again:' Desktopbackup 
-        destpath=$config/$Desktopbackup 
+        read -p 'please try again:' Desktopbackup  
+        destpath=$config/$Desktopbackup
     done
+    destpath=$config/$Desktopbackup
     desktopHere $destpath
 
 elif [[ $param == --drop ]]||[[ $param == -d ]];
@@ -58,7 +64,7 @@ elif [[ $param == --list ]]||[[ $param == -l ]];
 then
     echo ==================================
     echo list history versions
-    ls -a .dhere | grep '_Desktop_.'|sort
+    ls -a $workspace/.dhere | grep '_Desktop_.'|sort
     echo ==================================
 
 elif [[ $param == --backup ]]||[[ $param == -b ]];
@@ -68,9 +74,20 @@ then
     backup
     echo ==================================
 
+elif [[ $param == --show ]]||[[ $param == -s ]];
+then
+    echo ==================================
+    echo current desktop folder:
+    result=`readlink ~/Desktop`
+    if [[ $result == '' ]];
+    then
+        echo Default Desktop
+    fi
+    echo ==================================
+
 elif [[ $param == --help ]]||[[ $param == -h ]]||[[ $param == "" ]];
 then
-    more $config/readme.md
+    more $workspace/readme.md
 else
     if [ -d $param ];
     then

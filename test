@@ -1,0 +1,14 @@
+#!/bin/bash
+dhere
+dhere --help
+dhere -h
+dhere --s
+dhere --backup
+dhere -b
+dhere --list
+dhere -l
+dhere /Users
+dhere --show
+dhere --drop
+dhere -d
+dhere --reset
