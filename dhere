@@ -1,10 +1,10 @@
 #!/bin/bash
 cd `dirname $0`
 param=$1
-
-if [ ! -d ./.dhere ];
+config=~/.dhere
+if [ ! -d $config ];
 then
-    mkdir ./.dhere
+    mkdir $config
 fi
 
 desktopHere(){
@@ -15,7 +15,7 @@ desktopHere(){
 
 backup(){
     time=`date "+%Y_%m_%d_%H_%M_%S"`
-    path=./.dhere/_Desktop_$time
+    path=$config/_Desktop_$time
     mkdir $path
     cp -r ~/Desktop/ $path
     # find ~/Desktop/  | xargs -i mv {} $path
@@ -23,10 +23,10 @@ backup(){
 }
 
 authenticate(){
-    if [ ! -e ./.dhere/password.txt ];
+    if [ ! -e $config/password.txt ];
     then
         read -s -p "please enter your password:" password
-        echo $password > ./.dhere/password.txt
+        echo $password > $config/password.txt
     fi
 }
 
@@ -42,7 +42,7 @@ then
     while [ ! -d $destpath];
     do
         read -p 'please try again:' Desktopbackup 
-        destpath=./.dhere/$Desktopbackup 
+        destpath=$config/$Desktopbackup 
     done
     desktopHere $destpath
 
