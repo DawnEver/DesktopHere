@@ -18,6 +18,7 @@ backup(){
     path=./.dhere/_Desktop_$time
     mkdir $path
     cp -r ~/Desktop/ $path
+    # find ~/Desktop/  | xargs -i mv {} $path
     desktopHere $path
 }
 
@@ -34,7 +35,7 @@ authenticate
 if [[ $param == --reset ]]&&[[ $param == -r ]];
 then
     echo ==================================
-    ls .dhere | grep '_Desktop_.'|sort
+    ls -a .dhere | grep '_Desktop_.'|sort
     echo ==================================
     read -p 'please enter your desktop version:' Desktopbackup
     
@@ -45,11 +46,19 @@ then
     done
     desktopHere $destpath
 
+elif [[ $param == --list ]]&&[[ $param == -l ]];
+then
+    echo ==================================
+    echo list history versions
+    ls -a .dhere | grep '_Desktop_.'|sort
+    echo ==================================
+
 elif [[ $param == --backup ]]&&[[ $param == -b ]];
 then
     echo ==================================
     echo store current desktop
     backup
+    echo ==================================
 
 elif [[ $param == --help ]]&&[[ $param == -h ]];
 then
