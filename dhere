@@ -5,12 +5,15 @@ config=~/.dhere
 if [ ! -d $config ];
 then
     mkdir $config
+    # cp ./readme.md $config/readme.md
+
 fi
 
 desktopHere(){
     path=$1
     echo $passwd | sudo -S rm -r ~/Desktop
     ln -s $path ~/Desktop
+    
 }
 
 backup(){
@@ -61,9 +64,9 @@ then
     backup
     echo ==================================
 
-elif [[ $param == --help ]]||[[ $param == -h ]]||[[ $# == 0]];
+elif [[ $param == --help ]]||[[ $param == -h ]]||[[ $param == "" ]];
 then
-    more ./readme.md
+    more $config/readme.md
 else
     if [ -d $param ];
     then
