@@ -1,7 +1,6 @@
 #!/bin/bash
-cd `dirname $0`
 param=$1
-config=~/.dhere
+config=`readlink /usr/local/bin/dhere`/.dhere
 if [ ! -d $config ];
 then
     mkdir $config
