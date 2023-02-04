@@ -4,6 +4,7 @@
 - `dhere --help`or`dhere -h`show help
 - `dhere --backup`or`dhere -b`backup current desktop
 - `dhere --reset`or`dhere -r`reset desktop to a backup version
+- `dhere --drop`or`dhere -d`drop current desktop
 - `dhere --list`or`dhere -l`list your backups
 ## Attention
 - Password is needed for your first usage.

@@ -11,7 +11,7 @@ fi
 
 desktopHere(){
     path=$1
-    echo $passwd | sudo -S rm -r ~/Desktop
+    cat $config/password.txt | sudo -S rm -r ~/Desktop
     ln -s $path ~/Desktop
     
 }
@@ -49,6 +49,10 @@ then
         destpath=$config/$Desktopbackup 
     done
     desktopHere $destpath
+
+if [[ $param == --drop ]]||[[ $param == -d ]];
+then
+    rm -r ~/Desktop
 
 elif [[ $param == --list ]]||[[ $param == -l ]];
 then
