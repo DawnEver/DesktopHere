@@ -1,3 +1,5 @@
 #!/bin/bash
 dir=`dirname $0`
-ln -s $dir/dhere /usr/local/bin/dhere
+ln $dir/dhere /usr/local/bin/dhere
+# sudo cat "$dir/dhere" >/usr/local/bin/dhere
+# chmod +x /usr/local/bin/dhere
