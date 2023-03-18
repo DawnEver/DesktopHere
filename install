@@ -1,6 +1,5 @@
 #!/bin/bash
 dir=`dirname $0`
 # ln $dir/dhere /usr/local/bin/dhere
-echo $dir
 echo "$dir/dhere" >/usr/local/bin/dhere
 chmod +x /usr/local/bin/dhere

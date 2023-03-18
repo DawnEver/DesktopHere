@@ -23,3 +23,6 @@ For deep hate for seaching for workspace folder in finder,I developed **Desktop 
 
 ## Todos
 - gui
+
+## Log
+- 2023/3/18 fix bug and abandon `ln` in installation
