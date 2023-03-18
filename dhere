@@ -14,6 +14,7 @@ then
 
 fi
 
+# functions
 desktopHere(){
     path=$1
     cat $config/password.txt | sudo -S rm -r ~/Desktop
@@ -38,6 +39,7 @@ authenticate(){
     fi
 }
 
+# start
 authenticate
 
 if [[ $param == --reset ]]||[[ $param == -r ]];
