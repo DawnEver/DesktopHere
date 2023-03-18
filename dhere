@@ -1,18 +1,20 @@
 #!/bin/bash
 param=$1
-originlink=`readlink /usr/local/bin/dhere`
-workspace=${originlink%%/dhere*}
-if [[ workspace == '' ]];
-then
-    workspace=.
-fi
-config=$workspace/.dhere
-if [ ! -d $config ];
-then
-    mkdir $config
-    # cp ./readme.md $config/readme.md
+# originlink=`readlink /usr/local/bin/dhere`
+# workspace=${originlink%%/dhere*}
+# if [[ workspace == '' ]];
+# then
+#     workspace=.
+# fi
+# config=$workspace/.dhere
+# if [ ! -d $config ];
+# then
+#     mkdir $config
+#     # cp ./readme.md $config/readme.md
 
-fi
+# fi
+workspace=$(cd·"$(dirname·"$0")";·pwd)
+config=$workspace/.dhere
 
 # functions
 desktopHere(){
