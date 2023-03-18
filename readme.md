@@ -14,6 +14,7 @@
     For me,I keep my initial desktop emtpty.
 - Backup using `cp` and ***Desktop Here*** using `symbolic link`.
 - Config files and desktop versions in ./.dhere.
+- execute `install` again if the repo path is moved.
 ## Story
 Are you tired of your messy desktop after a all-night developing?
 Just like you,I beggan to miss the old days files  on the Desktop and wuthin a click no sooner than I cleared my Desktop.
@@ -26,3 +27,4 @@ For deep hate for seaching for workspace folder in finder,I developed **Desktop 
 
 ## Log
 - 2023/3/18 fix bug and abandon `ln` in installation
+- 2022/12/4 first version
