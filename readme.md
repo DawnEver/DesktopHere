@@ -7,7 +7,8 @@
 - `dhere --drop`or`dhere -d`drop current desktop
 - `dhere --list`or`dhere -l`list your backups
 - `dhere --show`or`dhere -s`show current desktop folder
-- use `. dhere <option>` to change directory to new Desktop. 
+- use `dhere <option>;cd ~/Desktop` to change directory to new Desktop in Terminal. 
+<!-- - use `. dhere <option>` to change directory to new Desktop.  -->
 ## Attention
 - Password is needed for your first usage.
 - Machine will clear and create a new desktop after restart,so save your work in time.
@@ -16,7 +17,7 @@
 - Backup using `cp` and ***Desktop Here*** using `symbolic link`.
 - Config files and desktop versions in ./.dhere.
 - execute `install` again if the repo path is moved.
-- To take effect `cd ~/desktop` in script,use `. dhere <option>` to cd to new Desktop.
+- To take effect `cd ~/desktop` in script,use `dhere <option>;cd ~/Desktop` to cd to new Desktop.
 ## Story
 Are you tired of your messy desktop after a all-night developing?
 Just like you,I beggan to miss the old days files  on the Desktop and wuthin a click no sooner than I cleared my Desktop.
