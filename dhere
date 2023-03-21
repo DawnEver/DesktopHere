@@ -21,6 +21,7 @@ desktopHere(){
     path=$1
     cat $config/password.txt | sudo -S rm -r ~/Desktop
     ln -s $path ~/Desktop
+    cd ~/Desktop
     
 }
 
@@ -63,6 +64,7 @@ elif [[ $param == --drop ]]||[[ $param == -d ]];
 then
     rm -r ~/Desktop
     mkdir ~/Desktop
+    cd ~/Desktop
 
 elif [[ $param == --list ]]||[[ $param == -l ]];
 then
